@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Video</title>
+</head>
+<body>
+    <h1>Shared Video</h1>
+    <video controls>
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <script>
+        // هنا تأخذ الرابط من الاستعلام أو يمكنك تخزينه في قاعدة بيانات
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoUrl = urlParams.get('video');
+        document.getElementById('videoSource').src = videoUrl;
+        document.querySelector('video').load();
+    </script>
+</body>
+</html>
